@@ -46,9 +46,14 @@ public class Main {
                 System.out.println("");
             }
             if (action.equals("3")) {
-                System.out.println("List of Orders: ");
-                for (Order o : cafe.getOrders()) {
-                    System.out.println(o);
+                if (cafe.getOrders().isEmpty()) {
+                    System.out.println("There are currently no unfulfilled orders.");
+                    continue;
+                } else {                
+                    System.out.println("List of Orders: ");
+                    for (Order o : cafe.getOrders()) {
+                        System.out.println(o);
+                    }
                 }
             }
             if (action.equals("4")) {
