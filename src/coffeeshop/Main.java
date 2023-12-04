@@ -35,6 +35,14 @@ public class Main {
                     System.out.println(item);
                 }
             }
+            if (action.equals("2")) {
+                System.out.print("What would you like to order? ");
+                String item = scanner.next().toLowerCase();
+                System.out.print("How many would you like to order: ");
+                int qty = scanner.nextInt();
+                Order order = new Order(item, qty);
+                cafe.addOrder(order);
+            }
         }
     }
 }
