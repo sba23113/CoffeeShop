@@ -16,7 +16,7 @@ public class Main {
         cafe.addItem("Sparkling Water", "Food", 2.00);
         
         while (true) {
-            System.out.println("**************");
+            System.out.println("****************************");
             System.out.println("1: show cafe menu");
             System.out.println("2: place an order");
             System.out.println("3: list orders");
@@ -24,7 +24,7 @@ public class Main {
             System.out.println("x: exit");
             System.out.print("Enter request: ");
             String action = scanner.next();
-            System.out.println("**************");
+            System.out.println("****************************");
 
             if (action.equals("x")) {
                 System.out.println("Thank you for your visit! Bye!");
@@ -38,10 +38,18 @@ public class Main {
             if (action.equals("2")) {
                 System.out.print("What would you like to order? ");
                 String item = scanner.next().toLowerCase();
-                System.out.print("How many would you like to order: ");
+                System.out.printf("How many %ss would you like to order: ", item);
                 int qty = scanner.nextInt();
                 Order order = new Order(item, qty);
                 cafe.addOrder(order);
+                System.out.printf("%dx %s coming up!", qty, item);
+                System.out.println("");
+            }
+            if (action.equals("3")) {
+                System.out.println("List of Orders: ");
+                for (Order o : cafe.getOrders()) {
+                    System.out.println(o);
+                }
             }
         }
     }
