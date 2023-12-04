@@ -17,6 +17,7 @@ public class Main {
         
         while (true) {
             System.out.println("****************************");
+            System.out.println("OPTIONS:");
             System.out.println("1: show cafe menu");
             System.out.println("2: place an order");
             System.out.println("3: list orders");
@@ -31,6 +32,7 @@ public class Main {
                 break;
             }                        
             if (action.equals("1")) {
+                System.out.println("MENU:");
                 for (Item item : cafe.getMenu()) {
                     System.out.println(item);
                 }
