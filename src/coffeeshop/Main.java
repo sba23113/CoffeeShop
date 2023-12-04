@@ -51,6 +51,14 @@ public class Main {
                     System.out.println(o);
                 }
             }
+            if (action.equals("4")) {
+                Order fulfilledOrder = cafe.removeOrder();
+                if (fulfilledOrder!=null) {
+                    System.out.println(fulfilledOrder.getQuantity() + "x " + fulfilledOrder.getItem() + " waiting for collection!");
+                } else {
+                    System.out.println("All orders have been fulfilled!");
+                }
+            }
         }
     }
 }
